@@ -1,6 +1,13 @@
 # Testmail API Email Viewer
 
 A small full-stack app for inspecting test emails from a Testmail inbox. The React client displays message content and delivery metadata, while an Express server keeps the Testmail credentials on the server and exposes a simple API for the frontend.
+## 🚀 Live Demo
+
+**Frontend:**  
+https://testmail-api-email-viewer.vercel.app/
+
+**Backend:**  
+https://testmail-api-email-viewer.onrender.com/
 
 ## Features
 
@@ -128,8 +135,29 @@ npm run lint     # Run ESLint
 
 The root package currently runs the backend with `node server.js`; it does not define a combined development script.
 
-## Security Notes
 
+## Deployment
+
+The project is deployed as two separate services.
+
+Frontend — Vercel
+
+The React/Vite frontend is deployed on Vercel.
+
+Live URL:
+https://testmail-api-email-viewer.vercel.app/
+
+Backend — Render
+
+The Node.js/Express backend is deployed on Render.
+
+Live URL:
+https://testmail-api-email-viewer.onrender.com/
+
+The backend uses environment variables for the Testmail API credentials.
+
+
+## Security Notes
 The browser never receives `TESTMAIL_API_KEY` or `TESTMAIL_NAMESPACE`. The Express server reads them from `.env` and sends them only to Testmail. The backend currently enables CORS for all origins, which is convenient for local development but should be restricted to the deployed frontend origin before production use.
 
 ## Possible Improvements
