@@ -11,7 +11,7 @@ function App() {
       setLoading(true);
       setError("");
 
-      const response = await fetch("http://localhost:3000/api/emails");
+      const response = await fetch("https://testmail-api-email-viewer.onrender.com/api/emails");
 
       if (!response.ok) {
         throw new Error("Unable to fetch emails. Please try again.");
